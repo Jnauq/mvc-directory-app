@@ -1,0 +1,20 @@
+{{>header}}
+<div id="top">
+    <h1 id="title">Artist Directory</h1>
+    <form id="userOptions" method="GET" action="/artists/search">
+        <input type="text" id="searchField" name="search" placeholder="search by keyword">
+        <button class="dir-button" type="submit" id="searchbtn">Search</button>
+        <button class="dir-button" type="button" id="newArtistbtn" onClick="newArtist()">Add</button>
+    </form>
+</div>
+<div id="bottom">
+    <form id="create-new-menu" method="POST" action="/artists/add">
+        <input type="text" name="name" class="newEntry" id="newName" placeholder="Artist Name" maxlength="40">
+        <input type="text" name="about" class="newEntry" id="newBio" placeholder="About Artist" maxlength="40">
+        <input type="text" name="url" class="newEntry" id="newImg" placeholder="Image URL">
+        <button class="dir-button" type="submit" id="addArtistbtn">Add Artist</button>
+    </form>
+    <ul id="artist-list">
+        {{>artists}}
+    </ul>
+</div>

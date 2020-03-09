@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pageTitle }}</title>
+    <script src="/js/functions.js" defer></script>
+    <link href='/css/style.css' rel='stylesheet' />
+    {{#if loginCSS}}
+        <link href='/css/login.css' rel='stylesheet' />
+    {{/if}}
+    {{#if artistsCSS}}
+        <link href='/css/artists.css' rel='stylesheet' />
+    {{/if}}
+
+</head>
+<body>
+    {{{ body }}}
+</body>
+</html>
