@@ -19,23 +19,23 @@ const postAddArtist = ( req, res, next) => {
 
 const getAllArtists = ( req, res, next) => {
     let artists = artistModel.getAll()
-    // artists.then( ([entries, metaData]) => {
-    //     res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, a01044627`, artist: entries, artistsCSS: true })
-    // })
-    artists.then( (entries) => {
-        res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, a01044627`, artist: entries.rows, artistsCSS: true })
+    artists.then( ([entries, metaData]) => {
+        res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, a01044627`, artist: entries, artistsCSS: true })
     })
+    // artists.then( (entries) => {
+    //     res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, a01044627`, artist: entries.rows, artistsCSS: true })
+    // })
 }
 
 const getSearchArtists = ( req, res, next) => {
     let query = req.query.search
     let artists = artistModel.search(query)
-    // artists.then( ([entries, metaData]) => {
-    //     res.render('home', { pageTitle: 'Artist Directory', artist: entries, username: `Welcome, a01044627`, artistsCSS: true})
-    // })
-    artists.then( (entries) => {
-        res.render('home', { pageTitle: 'Artist Directory', artist: entries.rows, username: `Welcome, a01044627`, artistsCSS: true})
+    artists.then( ([entries, metaData]) => {
+        res.render('home', { pageTitle: 'Artist Directory', artist: entries, username: `Welcome, a01044627`, artistsCSS: true})
     })
+    // artists.then( (entries) => {
+    //     res.render('home', { pageTitle: 'Artist Directory', artist: entries.rows, username: `Welcome, a01044627`, artistsCSS: true})
+    // })
 }
 
 const postDeleteArtist = ( req, res, next) => {

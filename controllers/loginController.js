@@ -5,12 +5,12 @@ const postLogin = ( req, res, next) => {
     let pw = req.body.password
     if (user == "a01044627" && pw =="password") {
         let artists = artistModel.getAll()
-        // artists.then( ([entries, metaData]) => {
-        //     res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, ${user}`, artist: entries, artistsCSS : true })
-        // })
-        artists.then( (entries) => {
-            res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, ${user}`, artist: entries.rows, artistsCSS : true })
+        artists.then( ([entries, metaData]) => {
+            res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, ${user}`, artist: entries, artistsCSS : true })
         })
+        // artists.then( (entries) => {
+        //     res.render('home', { pageTitle: 'Artist Directory', username: `Welcome, ${user}`, artist: entries.rows, artistsCSS : true })
+        // })
     } else {
         res.redirect(301, '/')
     }
